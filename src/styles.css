@@ -1,0 +1,56 @@
+.navBarItem {
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+  } 
+.navBarBg {
+    background-color: #ECECEC;
+    width: 100%;
+    height: 30px;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+}
+.line {
+  background-color: black;
+  height: 1px;
+}
+
+.sticky {
+  position: sticky;
+  top: 0px;
+  z-index: 9999;
+}
+
+.logo {
+  height: 20px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.header {
+  background-color: #ECECEC;
+  height: 1.5vw;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.headerTitle {
+  color: black;
+  font-size: 12px;
+  font-weight: 400;
+} 
+
+.exitButton {
+  color: black;
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: 10px;
+}

@@ -1,0 +1,88 @@
+.background {
+    height: 100vh;
+    width: 100%;
+    background-color: #FFEBEA;
+    position: relative;
+}
+
+.intro {
+    background-color: white;
+    height: 6vw;
+    width: 18vw;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-top: none;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    top: 7%;
+    right: 50%;
+}
+
+.intro-text {
+    font-weight: 400;
+    font-size: 1.5vw;
+    margin-left: 10px;
+    margin-top: 1vw;
+}
+
+.cursor {
+    font-size: 1.5vw;
+    height: 20px;
+    margin-top: 1vw;
+}
+
+.name-text {
+    font-family: 'SpaceGrotesk';
+    font-size: 6.5vw;
+    font-weight: 800;
+    margin-top: 0.25vw;
+    margin-bottom: 0px;
+}
+
+.name {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-top: none;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    position: absolute;
+}
+
+.welcome {
+    text-align: left;
+    background-color: white;
+    height: 9vw;
+    width: 16vw;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-top: none;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+}
+
+.welcome-text {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 1.5vw;
+    font-size: 1.1vw;
+}
+
+.card {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-top: none;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background-color: #FBD6D0;
+    width: 25vw;
+}
