@@ -1,11 +1,15 @@
 import '../styles.css'
 
-const Header = ({hasExit, title}) => {
-    return(
-        <div className='header' style={{justifyContent: hasExit ? 'space-between': 'center' }}>
-            {hasExit && (<p className='exitButton'>X</p>)}
+const Header = ({ hasExit, title, handleClose, currentZ, setCurrentZ, setLocalZ }) => {
+    const handleHeaderClick = () => {
+        setLocalZ(currentZ + 1);
+        setCurrentZ(currentZ + 1);
+    }
+    return (
+        <div className='header' style={{ justifyContent: hasExit ? 'space-between' : 'center' }} onClick={handleHeaderClick}>
+            {hasExit && (<button className="exitButton" onClick={handleClose}>X</button>)}
             {title && (<p className='headerTitle'>{title}</p>)}
-            {hasExit && (<div/>)}
+            {hasExit && (<div />)}
         </div>
     )
 }

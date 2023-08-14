@@ -1,11 +1,19 @@
 import Header from "../components/Header";
+import { useState, useCallback } from "react";
 
-const Welcome = () => {
+const Welcome = ({currentZ, setCurrentZ}) => {
+    const [localZ, setLocalZ] = useState(0);
+    const [open, setOpen] = useState(true);
+    const handleClose = useCallback(() => {
+        setOpen(false)
+    }, [open, setOpen]);
     return (
-        <div className="welcome">
-            <Header hasExit={true} />
-            <p className="welcome-text">Welcome to my website! Scroll down to learn more about me.</p>
-        </div>
+        open && (
+            < div className="welcome" style={{zIndex: localZ}}>
+                <Header hasExit={true} handleClose={handleClose} currentZ={currentZ} setCurrentZ={setCurrentZ} setLocalZ={setLocalZ}/>
+                <p className="welcome-text">Welcome to my website! Scroll down to learn more about me.</p>
+            </div >
+        )
     );
 }
 export default Welcome;

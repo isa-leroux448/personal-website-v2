@@ -1,12 +1,17 @@
 .navBarItem {
-    padding: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     text-decoration: none;
     color: black;
     font-size: 18px;
     font-weight: 400;
+    background-color: transparent;
   } 
+.navBarItem:hover {
+  background-color: #4BBEB9;
+}
 .navBarBg {
     background-color: #ECECEC;
     width: 100%;
@@ -28,8 +33,14 @@
 
 .logo {
   height: 20px;
-  margin-left: 10px;
-  margin-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  background-color: transparent;
+}
+.logo:hover {
+  background-color: #4BBEB9;
 }
 
 .header {
@@ -52,5 +63,6 @@
   color: black;
   font-size: 12px;
   font-weight: 600;
-  margin-left: 10px;
+  border: none;
+  cursor: pointer;
 }

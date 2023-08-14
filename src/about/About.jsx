@@ -3,17 +3,19 @@ import './styles.css';
 import Name from './Name'
 import Welcome from './Welcome';
 import Card from './Card';
+import { useState } from 'react';
 
 const About = () => {
+    const [currentZIndex, setCurrentZIndex] = useState(0);
     return (
         <div className='background'>
-            <Intro/>
-            <Name name="ISABELLA" width="32vw" height="10vw" color="#4BBEB9" top="30%" right="40%"/>
-            <Name name="LEROUX" width="28vw" height="10vw" color="#FF8B8B" top="49%" right="30%"/>
-            <Welcome/>
-            <Card text="Developer" top="4%" right="75%"/>
-            <Card text="UBC Student" top="60%" right="70%"/>
-            <Card text="Design Enthusiast" top="10%" right="5%"/>
+            <Intro currentZ={currentZIndex} setCurrentZ={setCurrentZIndex} />
+            <Name name="ISABELLA" width="32vw" height="10vw" color="#4BBEB9" top="30%" right="40%" currentZ={currentZIndex} setCurrentZ={setCurrentZIndex} />
+            <Name name="LEROUX" width="28vw" height="10vw" color="#FF8B8B" top="49%" right="30%" currentZ={currentZIndex} setCurrentZ={setCurrentZIndex} />
+            <Welcome currentZ={currentZIndex} setCurrentZ={setCurrentZIndex}/>
+            <Card text="Developer" top="4%" right="75%" currentZ={currentZIndex} setCurrentZ={setCurrentZIndex}/>
+            <Card text="UBC Student" top="60%" right="70%" currentZ={currentZIndex} setCurrentZ={setCurrentZIndex}/>
+            <Card text="Design Enthusiast" top="10%" right="5%" currentZ={currentZIndex} setCurrentZ={setCurrentZIndex}/>
         </div>
     )
 }
