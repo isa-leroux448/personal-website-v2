@@ -1,5 +1,6 @@
 import Header from "../components/Header";
 import { useState, useEffect, useCallback } from "react";
+import { motion, useDragControls } from "framer-motion"
 
 const Intro = ({ currentZ, setCurrentZ }) => {
     const [cursorString, setCursorString] = useState('');
@@ -17,16 +18,19 @@ const Intro = ({ currentZ, setCurrentZ }) => {
             }
         }, 1000);
     }, [cursorString]);
+    const dragControls = useDragControls()
 
     return (
         open && (
-            < div className="intro" style={{ zIndex: localZ }}>
-                <Header hasExit={true} handleClose={handleClose} currentZ={currentZ} setCurrentZ={setCurrentZ} setLocalZ={setLocalZ} />
+            <motion.div
+                drag dragControls={dragControls} dragMomentum={false} dragListener={false}
+                className="intro" style={{ zIndex: localZ }}>
+                <Header hasExit={true} handleClose={handleClose} currentZ={currentZ} setCurrentZ={setCurrentZ} setLocalZ={setLocalZ} dragControls={dragControls} />
                 <div style={{ display: 'flex', height: '20px' }}>
                     <p className="intro-text">Hi my name is&nbsp;&nbsp;</p>
                     <p className="cursor">{cursorString}</p>
                 </div>
-            </div >
+            </motion.div >
         )
     );
 }
