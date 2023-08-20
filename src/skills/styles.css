@@ -54,6 +54,12 @@
   .grid-item {
     position: relative;
   }
+
+  .tooltip {
+    background-color: '#ECECEC';
+    color: black;
+    border: 1px solid black;
+  }
   
   .grid-item img {
     max-width: 50%;
