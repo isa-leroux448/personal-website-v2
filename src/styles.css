@@ -66,3 +66,11 @@
   border: none;
   cursor: pointer;
 }
+
+.titleText {
+  font-family: 'SpaceGrotesk';
+  font-size: 4vw;
+  font-weight: 600;
+  margin-top: 0.25vw;
+  margin-bottom: 0px;
+}
