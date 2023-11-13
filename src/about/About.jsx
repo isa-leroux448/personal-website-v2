@@ -14,8 +14,8 @@ const About = () => {
             <Name name="LEROUX" width="28vw" height="10vw" color="#FF8B8B" top="49%" right="30%" currentZ={currentZIndex} setCurrentZ={setCurrentZIndex} />
             <Welcome currentZ={currentZIndex} setCurrentZ={setCurrentZIndex}/>
             <Card text="Developer" top="4%" right="75%" currentZ={currentZIndex} setCurrentZ={setCurrentZIndex}/>
-            <Card text="UBC Student" top="60%" right="70%" currentZ={currentZIndex} setCurrentZ={setCurrentZIndex}/>
-            <Card text="Design Enthusiast" top="10%" right="5%" currentZ={currentZIndex} setCurrentZ={setCurrentZIndex}/>
+            <Card text="UBC Computer Science Student" top="60%" right="70%" currentZ={currentZIndex} setCurrentZ={setCurrentZIndex}/>
+            <Card text="Designer" top="10%" right="5%" currentZ={currentZIndex} setCurrentZ={setCurrentZIndex}/>
         </div>
     )
 }

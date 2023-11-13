@@ -25,7 +25,7 @@ const Folder = ({ currentZ, setCurrentZ, items, setItems, file, folderTitle }) =
             <div style={{ display: 'flex', flexDirection: 'row' }}>
                 {filteredJobs.map((item, index) => (
                     <div className="folder-container" onDoubleClick={() => handleOpen(item)}>
-                        <img style={{ height: '5vw' }} src={require(`../assets/${file}.png`)} alt={file} />
+                        <img style={{ height: file === "text-file" ? '5vw' : '4vw'}} src={require(`../assets/${file}.png`)} alt={file} />
                         <p className="folder-text">{item.company}</p>
                     </div>
                 ))}
