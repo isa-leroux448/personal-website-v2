@@ -11,17 +11,16 @@ import { Mousewheel } from "swiper/modules";
 
 function App() {
   const swiperRef = useRef();
-  window.location.hash = `about`;
 
   const swiperContainerStyle = {
     height: '100vh',
   };
-
+  
   const navigateToSlide = (slideIndex) => {
-    const divIds = ["about", "experience", "skills", "projects"];
+    // const divIds = ["about", "experience", "skills", "projects"];
     if (swiperRef.current) {
       swiperRef.current.slideTo(slideIndex);
-      window.location.hash = `${divIds[slideIndex]}`;
+      // window.location.hash = `${divIds[slideIndex]}`;
     }
   };
 
@@ -32,7 +31,6 @@ function App() {
         direction="vertical"
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
-          console.log(swiperRef.current.slides.length);
         }}
         slidesPerView={1}
         spaceBetween={0}
@@ -40,10 +38,10 @@ function App() {
         modules={[Mousewheel]}
         style={swiperContainerStyle}
       >
-        <SwiperSlide id="about" style={{height:"100vh"}}><About /></SwiperSlide>
-        <SwiperSlide id="experience" style={{height:"100vh"}}><Experience /></SwiperSlide>
-        <SwiperSlide id="skills" style={{height:"100vh"}}><Skills /></SwiperSlide>
-        <SwiperSlide id="projects" style={{height:"100vh"}}><Projects /></SwiperSlide>
+        <SwiperSlide style={{height:"100vh"}}><About /></SwiperSlide>
+        <SwiperSlide style={{height:"100vh"}}><Experience /></SwiperSlide>
+        <SwiperSlide style={{height:"100vh"}}><Skills /></SwiperSlide>
+        <SwiperSlide style={{height:"100vh"}}><Projects /></SwiperSlide>
       </Swiper>
     </div>
   );
