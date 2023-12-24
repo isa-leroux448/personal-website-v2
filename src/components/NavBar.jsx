@@ -2,7 +2,7 @@ import React from "react";
 import '../styles.css';
 import logo from '../assets/logo.png'
 
-const NavBar = () => {
+const NavBar = ({navigateToSlide}) => {
     return (
         <div className="sticky">
             <header className="navBarBg">
@@ -10,11 +10,10 @@ const NavBar = () => {
                     <img src={logo} alt="logo" className="logo" />
                 </a>
                 <nav>
-                    <a href="#about" className="navBarItem">About</a>
-                    <a href="#experience" className="navBarItem">Experience</a>
-                    <a href="#skills" className="navBarItem">Skills</a>
-                    <a href="#projects" className="navBarItem">Projects</a>
-                    <a href="#contact" className="navBarItem">Contact</a>
+                    <button className="navBarItem" onClick={() => navigateToSlide(0)}>About</button>
+                    <button className="navBarItem" onClick={() => navigateToSlide(1)}>Experience</button>
+                    <button className="navBarItem" onClick={() => navigateToSlide(2)}>Skills</button>
+                    <button className="navBarItem" onClick={() => navigateToSlide(3)}>Projects</button>
                 </nav>
             </header>
             <div className="line" />
