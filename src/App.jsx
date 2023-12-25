@@ -37,6 +37,7 @@ function App() {
         mousewheel={true}
         modules={[Mousewheel]}
         style={swiperContainerStyle}
+        allowTouchMove={false}
       >
         <SwiperSlide style={{height:"100vh"}}><About /></SwiperSlide>
         <SwiperSlide style={{height:"100vh"}}><Experience /></SwiperSlide>

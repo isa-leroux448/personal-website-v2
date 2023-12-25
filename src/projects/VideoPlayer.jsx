@@ -2,20 +2,16 @@ import { useState, useCallback, useRef} from "react";
 import {motion, useDragControls} from 'framer-motion';
 import Header from "../components/Header";
 import ReactPlayer from 'react-player';
-import {projects} from './project-data';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-const VideoPlayer = ({ currentZ, setCurrentZ }) => {
-    const [localZ, setLocalZ] = useState(0);
+const VideoPlayer = ({ currentZ, setCurrentZ, items, playerFiles, setItems, index }) => {
+    const [localZ, setLocalZ] = useState(1);
     const [open, setOpen] = useState(true);
-    const handleClose = useCallback(() => {
-      setOpen(false);
-    }, []);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [currentProject, setCurrentProject] = useState(projects[0]);
+    const [currentProject, setCurrentProject] = useState(items[0]);
 
     const dragControls = useDragControls();
     
@@ -34,26 +30,39 @@ const VideoPlayer = ({ currentZ, setCurrentZ }) => {
         }
       }
       currentProject.selected = false;
-      projects[newIndex].selected = true;
+      items[newIndex].selected = true;
       setCurrentIndex(newIndex);
-      setCurrentProject(projects[newIndex]);
+      setCurrentProject(items[newIndex]);
     }
 
     const swipeNext = () => {
       const newIndex = currentIndex+1;
       currentProject.selected = false;
-      projects[newIndex].selected = true;
+      items[newIndex].selected = true;
       setCurrentIndex(newIndex);
-      setCurrentProject(projects[newIndex]);
+      setCurrentProject(items[newIndex]);
     }
 
     const swipeBack = () => {
       const newIndex = currentIndex-1;
       currentProject.selected = false;
-      projects[newIndex].selected = true;
+      items[newIndex].selected = true;
       setCurrentIndex(newIndex);
-      setCurrentProject(projects[newIndex]);
+      setCurrentProject(items[newIndex]);
     }
+
+    const handleClose = useCallback(() => {
+      setOpen(false);
+      setLocalZ(currentZ + 1);
+      setCurrentZ(currentZ + 1);
+      const updatedItems = playerFiles.map(item => {
+        if (item === playerFiles[index]) {
+            return { ...item, show: false };
+        }
+        return item;
+    });
+    setItems(updatedItems);
+    }, [playerFiles]);
   
     return (
       open && (
@@ -63,11 +72,11 @@ const VideoPlayer = ({ currentZ, setCurrentZ }) => {
           dragMomentum={false}
           dragListener={false}
           className="video-container"
-          style={{ zIndex: localZ }}
+          style={{ zIndex: localZ, left: playerFiles[index].left, top: playerFiles[index].top }}
         >
           <Header
             hasExit={true}
-            title="Web Projects"
+            title={playerFiles[index].heading1}
             handleClose={handleClose}
             currentZ={currentZ}
             setCurrentZ={setCurrentZ}
@@ -88,7 +97,7 @@ const VideoPlayer = ({ currentZ, setCurrentZ }) => {
                     swiperRef.current = swiper;
                   }}
                 >
-                  {projects.map((project, index) => (
+                  {items.map((project, index) => (
                     <SwiperSlide key={index}>
                       <ReactPlayer
                         url={project?.videoLink}
@@ -103,7 +112,7 @@ const VideoPlayer = ({ currentZ, setCurrentZ }) => {
                 </Swiper>
                 </div>
                 <div style={{backgroundColor: 'white', display: "flex", flex: 1, flexDirection: "column"}}>
-                {projects.map((project, index) => (
+                {items.map((project, index) => (
                 <div onClick={() => selectProject(index)} key={index} style={{padding: '3px', paddingLeft: '10px', border: '0.5px solid black', backgroundColor: project.selected ? '#FF8B8B': 'white', cursor: 'pointer'}}>{project.title}</div>))}
                 </div>
             </div>

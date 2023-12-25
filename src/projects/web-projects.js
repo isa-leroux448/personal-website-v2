@@ -1,4 +1,4 @@
-export const projects = [
+export const web_projects = [
     {
         title: "Heardle",
         videoLink: "https://vimeo.com/816084730?share=copy",
