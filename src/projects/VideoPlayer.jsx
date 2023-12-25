@@ -6,6 +6,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { mediaType } from "./web-projects";
 
 const VideoPlayer = ({ currentZ, setCurrentZ, items, playerFiles, setItems, index }) => {
     const [localZ, setLocalZ] = useState(1);
@@ -97,16 +98,36 @@ const VideoPlayer = ({ currentZ, setCurrentZ, items, playerFiles, setItems, inde
                     swiperRef.current = swiper;
                   }}
                 >
-                  {items.map((project, index) => (
-                    <SwiperSlide key={index}>
+                {items.map((project, index) => (
+                  <SwiperSlide key={index}>
+                    {project.type === mediaType.VIDEO ? (
                       <ReactPlayer
-                        url={project?.videoLink}
+                        url={project?.link}
                         width='100%'
                         height='100%'
                         controls={true}
                       />
-                    </SwiperSlide>
-                  ))}
+                    ) : project.type === mediaType.FIGMA ? (
+                      <iframe
+                        width="100%"
+                        height="100%"
+                        src={project?.link}
+                        allowFullScreen
+                        title="Embedded Video"
+                      />
+                    ) : project.type === mediaType.IMAGE ? (
+                      <div>
+                        <img
+                        src={require(`../assets/${project?.image}.png`)}
+                        width='100%'
+                        height='100%'
+                        alt="Project Image"
+                      />
+                      <a href={project?.link} target="_blank"><button className="visit-button">Click to visit</button></a>
+                      </div>
+                    ) : null}
+                  </SwiperSlide>
+                ))}
                   <div className="swiper-button-next" onClick={() => swipeNext()} style={{ color: '#ECECEC' }}></div>
                   <div className="swiper-button-prev" onClick={() => swipeBack()} style={{ color: '#ECECEC' }}></div>
                 </Swiper>
