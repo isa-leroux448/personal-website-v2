@@ -137,3 +137,48 @@
   border-radius: 6px;
   padding: 2px;
 }
+
+.notification-container {
+  background-color: white;
+  width: 350px;
+  height: 80px;
+  position: absolute;
+  left: 5px;
+  bottom: 40px;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.notification-exit {
+  display: flex;
+  align-items: center;
+  border-radius: 100%;
+  position: absolute;
+  background-color: #e3e3e3;
+  width: 30px;
+  height: 30px;
+  left: -10px;
+  top: -10px;
+  justify-content: center;
+  border: 1px solid black;
+}
+
+.notification-exit:hover {
+  background-color: #4BBEB9;
+  cursor: pointer;
+}
+
+.notification-exit-text {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.notification-info {
+  padding-right: 10px;
+  padding-left: 2px;
+  object-fit: contain;
+  max-height: 30%;
+}
