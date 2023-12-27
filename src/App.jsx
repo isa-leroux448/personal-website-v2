@@ -41,10 +41,10 @@ function App() {
         allowTouchMove={false}
         onSlideChange={() => setCurrentSlide(swiperRef.current?.activeIndex)}
       >
-        <SwiperSlide style={{height:"100vh"}}><About /></SwiperSlide>
+        <SwiperSlide style={{height:"100vh"}}><About swiperIndex={currentSlide}/></SwiperSlide>
         <SwiperSlide style={{height:"100vh"}}><Experience swiperIndex={currentSlide}/></SwiperSlide>
         <SwiperSlide style={{height:"100vh"}}><Skills /></SwiperSlide>
-        <SwiperSlide style={{height:"100vh"}}><Projects /></SwiperSlide>
+        <SwiperSlide style={{height:"100vh"}}><Projects swiperIndex={currentSlide}/></SwiperSlide>
       </Swiper>
     </div>
   );

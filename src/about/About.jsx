@@ -3,10 +3,19 @@ import './styles.css';
 import Name from './Name'
 import Welcome from './Welcome';
 import Card from './Card';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import Notification from '../components/Notification';
 
-const About = () => {
+const About = ({swiperIndex}) => {
     const [currentZIndex, setCurrentZIndex] = useState(0);
+    const [isCurrentSlide, setIsCurrentSlide] = useState(false);
+    const [isFirstTime, setIsFirstTime] = useState(0);
+    useEffect (() => {
+        setIsCurrentSlide(swiperIndex === 0);
+        if (swiperIndex === 0) {
+            setIsFirstTime(isFirstTime + 1);
+        }
+    }, [swiperIndex]) 
     return (
         <div className='background'>
             <Intro currentZ={currentZIndex} setCurrentZ={setCurrentZIndex} />
@@ -16,6 +25,7 @@ const About = () => {
             <Card text="Developer" top="4%" right="75%" currentZ={currentZIndex} setCurrentZ={setCurrentZIndex}/>
             <Card text="UBC Computer Science Student" top="60%" right="70%" currentZ={currentZIndex} setCurrentZ={setCurrentZIndex}/>
             <Card text="Designer" top="10%" right="5%" currentZ={currentZIndex} setCurrentZ={setCurrentZIndex}/>
+            {isCurrentSlide && isFirstTime < 2 &&(<Notification />)}
         </div>
     )
 }

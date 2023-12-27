@@ -7,12 +7,16 @@ import Folder from '../components/Folder';
 import Notification from '../components/Notification';
 
 const Experience = ({swiperIndex}) => {
-    useEffect (() => {
-        setIsCurrentSlide(swiperIndex === 1);
-    }, [swiperIndex]) 
     const [currentZIndex, setCurrentZIndex] = useState(0);
     const [items, setItems] = useState(jobs);
     const [isCurrentSlide, setIsCurrentSlide] = useState(false);
+    const [isFirstTime, setIsFirstTime] = useState(0);
+    useEffect (() => {
+        setIsCurrentSlide(swiperIndex === 1);
+        if (swiperIndex === 1) {
+            setIsFirstTime(isFirstTime + 1);
+        }
+    }, [swiperIndex]) 
     return (
         <div className='background'>
             <SectionTitle title="EXPERIENCE" color="#4BBEB9" setCurrentZ={setCurrentZIndex} currentZ={currentZIndex} top="5%" right="60%" />
@@ -20,7 +24,7 @@ const Experience = ({swiperIndex}) => {
                 <JobCard currentZ={currentZIndex} setCurrentZ={setCurrentZIndex} job={item} allJobs={items} setJobs={setItems}/>
             ))}
             <Folder setCurrentZ={setCurrentZIndex} currentZ={currentZIndex} items={items} setItems={setItems} file="text-file" folderTitle="Volunteer positions"/>
-            {isCurrentSlide && (<Notification />)}
+            {isCurrentSlide && isFirstTime < 2 &&(<Notification />)}
         </div>
     )
 }
