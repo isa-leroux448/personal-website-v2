@@ -20,7 +20,7 @@ const Projects = ({swiperIndex}) => {
     }, [swiperIndex]) 
     return (
         <div className='background'>
-            <SectionTitle title="PROJECTS" color="#4BBEB9" setCurrentZ={setCurrentZIndex} currentZ={currentZIndex} top="4%" right="5%"/>
+            <SectionTitle title="PROJECTS" color="#4BBEB9" setCurrentZ={setCurrentZIndex} currentZ={currentZIndex} top="18%" right="7%"/>
             {items[0].show && (<VideoPlayer setCurrentZ={setCurrentZIndex} currentZ={currentZIndex} items={web_projects} playerFiles={items} setItems={setItems} index={0} />)}
             {items[1].show && (<VideoPlayer setCurrentZ={setCurrentZIndex} currentZ={currentZIndex} items={web_projects} playerFiles={items} setItems={setItems} index={1} />)}
             <Folder setCurrentZ={setCurrentZIndex} currentZ={currentZIndex} items={items} setItems={setItems} file="project-folder" folderTitle="Projects"/>

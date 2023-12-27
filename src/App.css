@@ -10,6 +10,12 @@
   src: url('./assets/SpaceGrotesk.ttf')  format('truetype');
 }
 
+@font-face {
+  margin: 0;
+  font-family: 'CabinetGrotesk';
+  src: url('./assets/CabinetGrotesk-Variable.ttf')  format('truetype');
+}
+
 body {
   font-family: 'Inter', sans-serif;
   margin: 0;

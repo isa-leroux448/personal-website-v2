@@ -15,8 +15,8 @@ const Card = ({ image, text, top, right, currentZ, setCurrentZ }) => {
       <motion.div drag dragControls={dragControls} dragMomentum={false} dragListener={false}
         className="card" style={{ position: 'absolute', top, right, zIndex: localZ }}>
         <Header hasExit={true} handleClose={handleClose} currentZ={currentZ} setCurrentZ={setCurrentZ} setLocalZ={setLocalZ} dragControls={dragControls}/>
-        <img style={{ height: '175px', marginTop: '5px' }} src={sample} />
-        <p style={{ fontWeight: 600 }}>{text}</p>
+        <img style={{ height: '180px', marginTop: '5px' }} src={require(`../assets/about_images/${image}.png`)} />
+        <p style={{ fontWeight: 600, marginTop: '2px' }}>{text}</p>
       </motion.div>
     )
   );

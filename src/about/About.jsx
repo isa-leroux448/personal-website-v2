@@ -22,9 +22,9 @@ const About = ({swiperIndex}) => {
             <Name name="ISABELLA" width="32vw" height="10vw" color="#4BBEB9" top="30%" right="40%" currentZ={currentZIndex} setCurrentZ={setCurrentZIndex} />
             <Name name="LEROUX" width="28vw" height="10vw" color="#FF8B8B" top="49%" right="30%" currentZ={currentZIndex} setCurrentZ={setCurrentZIndex} />
             <Welcome currentZ={currentZIndex} setCurrentZ={setCurrentZIndex}/>
-            <Card text="Developer" top="4%" right="75%" currentZ={currentZIndex} setCurrentZ={setCurrentZIndex}/>
-            <Card text="UBC Computer Science Student" top="60%" right="70%" currentZ={currentZIndex} setCurrentZ={setCurrentZIndex}/>
-            <Card text="Designer" top="10%" right="5%" currentZ={currentZIndex} setCurrentZ={setCurrentZIndex}/>
+            <Card text="Developer" top="4%" right="75%" currentZ={currentZIndex} setCurrentZ={setCurrentZIndex} image="developer"/>
+            <Card text="UBC Computer Science Student" top="58%" right="65%" currentZ={currentZIndex} setCurrentZ={setCurrentZIndex} image="student"/>
+            <Card text="Designer" top="8%" right="8%" currentZ={currentZIndex} setCurrentZ={setCurrentZIndex} image="designer"/>
             {isCurrentSlide && isFirstTime < 2 &&(<Notification />)}
         </div>
     )

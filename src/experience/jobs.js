@@ -12,12 +12,12 @@ export const jobs = [
     {
         image: require("../assets/jobs_logos/alianza.png"),
         company: "Alianza",
-        heading1: "QA C0-OP",
+        heading1: "QA CO-OP",
         heading2: "Jan 2023 - May 2023",
         description: "2 sentence description using some words here some words there bla bla bla. And more words just to add and simulate what it would look like.",
         show: true,
-        top: '50%',
-        right: '45%',
+        top: '55%',
+        right: '40%',
     },
     {
         image: require("../assets/jobs_logos/cra.png"),
@@ -26,8 +26,8 @@ export const jobs = [
         heading2: "May 2022 - Sept 2022",
         description: "2 sentence description using some words here some words there bla bla bla. And more words just to add and simulate what it would look like.",
         show: true,
-        top: '3%',
-        right: '7%',
+        top: '7%',
+        right: '22%',
     },
     {
         image: require("../assets/jobs_logos/biztech.png"),
