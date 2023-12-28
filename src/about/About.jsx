@@ -25,7 +25,9 @@ const About = ({swiperIndex}) => {
             <Card text="Developer" top="4%" right="75%" currentZ={currentZIndex} setCurrentZ={setCurrentZIndex} image="developer"/>
             <Card text="UBC Computer Science Student" top="58%" right="65%" currentZ={currentZIndex} setCurrentZ={setCurrentZIndex} image="student"/>
             <Card text="Designer" top="8%" right="8%" currentZ={currentZIndex} setCurrentZ={setCurrentZIndex} image="designer"/>
-            {isCurrentSlide && isFirstTime < 2 &&(<Notification />)}
+            {isCurrentSlide && isFirstTime < 2 &&(<Notification 
+            text = {`This website is interactive! You can drag around windows and clear them by clicking on "X"`}
+            />)}
         </div>
     )
 }

@@ -138,13 +138,19 @@ const VideoPlayer = ({ currentZ, setCurrentZ, items, playerFiles, setItems, inde
                 </div>
             </div>
             <div style={{backgroundColor: 'white', width: '25%'}}>
-              <h3 style={{padding: '10px', marginBottom: '5px'}}>{currentProject?.title}</h3>
-              <div style={{padding: '10px', paddingTop: '0px'}}>{currentProject?.description}</div>
+              <h3 style={{padding: '10px', marginTop: '5px'}}>{currentProject?.title}</h3>
+              <p className="subtitle">{currentProject?.subtitle}</p>
+              <div className="description">{currentProject?.description}</div>
+              <p style={{padding: '10px', marginBottom: '0px', marginTop: '0px', fontSize: '16px', fontWeight: '550'}}>Check it out:</p>
+              {currentProject?.relatedLink[0] && (<a href = {currentProject?.relatedLink[0]}><p style={{padding: '10px', paddingTop: '0px', paddingBottom: '0px', marginTop: '0px', marginBottom: '0px' }}>GitHub</p></a>)}
+              {currentProject?.relatedLink[1] && (<a href = {currentProject?.relatedLink[1]}><p style={{padding: '10px', paddingTop: '0px', paddingBottom: '0px', marginTop: '0px', marginBottom: '0px' }}>Devpost</p></a>)}
               <div>
                 <h4 style={{padding: '10px', paddingBottom: '0px', marginBottom: '10px'}}>Tags</h4>
+                <div style={{display: 'flex', flexWrap: 'wrap'}}>
                 {currentProject?.tags.map((tag, index) => (
-                  <div style={{paddingLeft: '10px', paddingRight: '10px'}}>{tag}</div>
+                  <div style={{paddingLeft: '7px', paddingRight: '7px', margin: '2px', marginRight: '5px', marginLeft: '5px', backgroundColor: '#FBD6D0', borderRadius: '10px'}}>{tag}</div>
                 ))}
+                </div>
               </div>
             </div>
           </div>

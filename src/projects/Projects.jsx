@@ -5,6 +5,7 @@ import VideoPlayer from './VideoPlayer';
 import { videoFolders } from './video-folders';
 import Folder from '../components/Folder';
 import { web_projects } from './web-projects';
+import { other_projects } from './other-projects';
 import Notification from '../components/Notification';
 
 const Projects = ({swiperIndex}) => {
@@ -22,9 +23,10 @@ const Projects = ({swiperIndex}) => {
         <div className='background'>
             <SectionTitle title="PROJECTS" color="#4BBEB9" setCurrentZ={setCurrentZIndex} currentZ={currentZIndex} top="18%" right="7%"/>
             {items[0].show && (<VideoPlayer setCurrentZ={setCurrentZIndex} currentZ={currentZIndex} items={web_projects} playerFiles={items} setItems={setItems} index={0} />)}
-            {items[1].show && (<VideoPlayer setCurrentZ={setCurrentZIndex} currentZ={currentZIndex} items={web_projects} playerFiles={items} setItems={setItems} index={1} />)}
+            {items[1].show && (<VideoPlayer setCurrentZ={setCurrentZIndex} currentZ={currentZIndex} items={other_projects} playerFiles={items} setItems={setItems} index={1} />)}
             <Folder setCurrentZ={setCurrentZIndex} currentZ={currentZIndex} items={items} setItems={setItems} file="project-folder" folderTitle="Projects"/>
-            {isCurrentSlide && isFirstTime < 2 &&(<Notification />)}
+            {isCurrentSlide && isFirstTime < 2 &&(<Notification 
+            text={`Navigate through my projects by using the arrows or by clicking on the project name. Double click on the "More Projects" folder to learn about my non-web projects`}/>)}
         </div>
     )
 }

@@ -31,7 +31,7 @@ const NavBar = ({navigateToSlide}) => {
                             <a href="https://www.linkedin.com/in/isabella-leroux/" target="_blank">
                                 <button className="dropdownItem">LinkedIn</button>
                             </a>
-                            <a href="" target="_blank">
+                            <a href={require("../assets/resume.pdf")} target="_blank">
                                 <button className="dropdownItem">Resume</button>
                             </a>
                             <a href="https://github.com/isa-leroux448" target="_blank">

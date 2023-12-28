@@ -24,7 +24,8 @@ const Experience = ({swiperIndex}) => {
                 <JobCard currentZ={currentZIndex} setCurrentZ={setCurrentZIndex} job={item} allJobs={items} setJobs={setItems}/>
             ))}
             <Folder setCurrentZ={setCurrentZIndex} currentZ={currentZIndex} items={items} setItems={setItems} file="text-file" folderTitle="Volunteer positions"/>
-            {isCurrentSlide && isFirstTime < 2 &&(<Notification />)}
+            {isCurrentSlide && isFirstTime < 2 &&(<Notification 
+            text={"Double click on the text file icons to find out about my volunteer experience."}/>)}
         </div>
     )
 }
